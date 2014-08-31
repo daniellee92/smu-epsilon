@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  x-axis: 1.5
+  y-axis: 1.5
+  details: MyString
+  image_id: 1
+
+two:
+  x-axis: 1.5
+  y-axis: 1.5
+  details: MyString
+  image_id: 1

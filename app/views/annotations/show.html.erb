@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X-axis:</strong>
+  <%= @annotation.x-axis %>
+</p>
+
+<p>
+  <strong>Y-axis:</strong>
+  <%= @annotation.y-axis %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @annotation.details %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @annotation.image_id %>
+</p>
+
+<%= link_to 'Edit', edit_annotation_path(@annotation) %> |
+<%= link_to 'Back', annotations_path %>

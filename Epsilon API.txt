@@ -1,0 +1,98 @@
+== Epsilon API ==
+
+Hosted      : http://smu-epsilon.herokuapp.com
+
+
+Function	: Register
+URL			: /api/registrations
+HTTP Method : post
+Input		: nickname, email, phone_number, password, password_confirmation
+Response	: auth_token
+
+
+Function	: Check if email exists
+URL			: /api/users/email_exists
+HTTP Method : post
+Input		: user_email
+Response	: true/false
+
+
+Function	: Facebook Login
+URL			: /api/users/facebook_login
+HTTP Method : post
+Input		: user_email
+Response	: auth_token
+
+
+Function	: Login
+URL			: /api/sessions
+HTTP Method : post
+Input		: email, password
+Response	: auth_token
+
+
+Function	: Logout
+URL			: /api/sessions
+HTTP Method : delete
+Input		: auth_token
+Response	: "Auth_token has been reset."
+
+
+Function	: Send SMS Verification Code
+URL			: /api/verifications/create
+HTTP Method : post
+Input		: auth_token
+Response	: delivery_status
+				- DeliveredToTerminal
+				- DeliveryUncertain
+				- DeliveryImpossible
+				- MessageWaiting
+				- DeliveredToNetwork
+
+
+Function	: Verify SMS Verification Code
+URL			: /api/verifications/verify
+HTTP Method : post
+Input		: auth_token, verification_code_user
+Response	: verification_message
+				- Verified.
+				- Verification code has expired.
+				- Verification failed.
+				- Already verified.
+
+
+Function	: Get User
+URL			: /api/users/get_user
+HTTP Method : post
+Input		: auth_token
+Response	: user, created_at
+
+
+Function		: Create Feedback
+URL				: /api/feedbacks/create
+HTTP Method 	: post
+Input			: auth_token, title, details, address, latitude, longitude, detailed_location, image1, image2, image3, image4, image5
+Response		: feedback_id
+Success Status 	: 201
+
+
+Function	: Display All Feedbacks (Listing)
+URL			: /api/feedbacks/display_all_listing2
+HTTP Method : post
+Input		: retrieve_before_time (format: yyyy-mm-dd HH:MM:SS)
+Response	: [feedbacks]
+
+
+Function	: Display Feedback Details
+URL			: /api/feedbacks/display_details
+HTTP Method : post
+Input		: feedback_id
+Response	: feedback, nickname, created_at, last_acted_at
+
+
+Function		: Create Annotation
+URL				: /api/annotations/create
+HTTP Method		: post
+Input			: x_axis, y_axis, details, image_id, feedback_id
+Response		: annotation_id
+Success Status 	: 201
