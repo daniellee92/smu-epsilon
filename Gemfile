@@ -48,7 +48,7 @@ gem 'omniauth-facebook'
 gem 'oneapi-ruby'
 gem 'geocoder'
 gem 'gmaps4rails'
-
+gem 'owlcarousel-rails'
 # gem 'will_paginate', '~> 3.0.5'
 # gem 'betterlorem', '~> 0.1.2'
 

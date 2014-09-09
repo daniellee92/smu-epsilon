@@ -7,60 +7,80 @@
 
 <% end %>
 
-  <div class="container" align="center">
-    <h1>Display All Feedbacks</h1><br>
+<div class="container">
+  <h1 align="center">Display All Feedbacks</h1><br>
+  <div class="row top-margin-low">
+    <!--End Categories and other -->
+            <!--Blog Listing-->
+            <div class="col-md-2 top-margin">
+        
+            </div>
+            <div class="col-md-8 top-margin">
+              <!-- Start of Feedback Listing -->
+              <% @feedbacks.each do |feedback| %>
 
-    <% @feedbacks.each do |feedback| %>
-
-      <div class="container" align="center">
-        <div class="well profile" style="background-color: #F8F8FF;">
-          <div class="row">
-            <div class="span4 offset1" align="left">
-              <h3><%= link_to feedback.title,feedback %></h3>
-            </div>
-            <div class="span2" align="right">
-              <h5><%= feedback.created_at.strftime("%-d %b %Y %l:%M%P") %></h5>
-            </div>
-          </div><br>
-          <div class="row">
-            <div class="span3 offset1" align="left">
-              <i class="icon-map-marker icon-2x"></i><strong><%= feedback.detailed_location %></strong> | <strong><%= feedback.address %></strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="span6 offset1">              
-              <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                </ol>
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                  <div class="active item"></div>
+                <div class="panel panel-default" style="border-color: black;">
+                    <div class="panel-heading" style="background-color: white;">
+                        <h3 align="center"><%= link_to feedback.title,feedback, 'data-no-turbolink' => true %></h3>
+                    </div>
+                    <div class="panel-body" style="background-color: white;">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <i class="icon-map-marker icon-2x"></i><strong><%= feedback.detailed_location %></strong> | <strong><%= feedback.address %></strong>
+                        </div>
+                        <div class="col-md-6" align="right">
+                          <strong><%= feedback.created_at.strftime("%-d-%b-%Y %l:%M%P") %></strong>
+                        </div>
+                      </div>
+                      <br>
+                        <div>
+                          <div id="carousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                              <% if feedback.image1 != nil %>
+                                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                              <% end %>
+                              <% if feedback.image2 != nil %>
+                                <li data-target="#carousel" data-slide-to="1" ></li>
+                              <% end %>
+                              <% if feedback.image3 != nil %>
+                                <li data-target="#carousel" data-slide-to="2" ></li>
+                              <% end %>
+                              <% if feedback.image4 != nil %>
+                                <li data-target="#carousel" data-slide-to="3" ></li>
+                              <% end %>
+                              <% if feedback.image5 != nil %>
+                                <li data-target="#carousel" data-slide-to="4" ></li>
+                              <% end %>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                              <% if feedback.image1 != nil %>
+                                <div class="item active"><img src= <%= "data:image/jpeg;base64," + feedback.image1 %> style="width: 600px; height: 330px;"/></div>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <p><strong>Description</strong></p>
+                        <div class="txt" style="word-wrap: break-word;">
+                            <%= feedback.details %>
+                        </div>
+                        <hr>
+                        <div>
+                          <div class="row" align="center">
+                            <div class="col-md-6">
+                              <i class="icon-star-empty icon-3x"></i><big><strong> 0 Votes</strong></big>
+                            </div>
+                            <div class="col-md-6">
+                              <i class="icon-comments icon-3x"></i><big><strong> 0 Comments</strong></big>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
-              </div>
+              <% end %>
             </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row">
-              <div class="span4">
-                <div class="col-xs-12 col-sm-4 emphasis">                    
-                  <i class="icon-hand-up icon-3x"></i><big><strong> 0 Votes</strong></big>
-                </div>
-              </div>  
-              <div class="span4"> 
-                <div class="col-sm-4 emphasis">                  
-                  <i class="icon-comments icon-3x"></i><big><strong> 0 Comments</strong></big>
-                </div>
-              </div>
+            <div class="col-md-2 top-margin">
             </div>
-        </div>                
-      </div>
-
-    <% end %>
   </div>
-
-
-
+</div>

@@ -12,6 +12,12 @@ class FeedbacksController < ApplicationController
   # GET /feedbacks/1.json
   def show
     @nickname = User.find(@feedback.user_id).nickname
+    #display the location of the issue on google map
+    @hash = Gmaps4rails.build_markers(@feedback) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.title
+    end
   end
 
 

@@ -132,6 +132,8 @@ GEM
       omniauth (~> 1.2)
     oneapi-ruby (1.0.1)
     orm_adapter (0.5.0)
+    owlcarousel-rails (1.1.3.3)
+      jquery-rails
     pg (0.17.1)
     polyamorous (1.0.0)
       activerecord (>= 3.0)
@@ -237,6 +239,7 @@ DEPENDENCIES
   less-rails
   omniauth-facebook
   oneapi-ruby
+  owlcarousel-rails
   pg
   protected_attributes
   quiet_assets
