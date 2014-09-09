@@ -12,6 +12,8 @@
           </div>
           <div class="row">
             <div class="column col-md-7" id="main">
+              <div class="panel">
+                <div class="panel-body">
                     <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
                       <ol class="carousel-indicators">
                         <% if @feedback.image1 != nil %>
@@ -52,6 +54,8 @@
                                         <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
                                         <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
                                       </div>
+                                    </div>
+                                  </div>
                                     <div class="clearfix"></div>
               <br>
               <div class="panel">
@@ -78,23 +82,23 @@
               <div class="horizontal-line"></div>
               <b>Location: </b><i class="icon-map-marker icon-2x"></i><%= @feedback.detailed_location %> | <%= @feedback.address %>
               <div class="horizontal-line"></div>
-              <i class="icon-star-empty icon-2x"></i><big><strong> 0 Votes</strong></big>
+              <b>Votes: </b><big><strong> 0 </strong></big>
               <div class="horizontal-line"></div>
-              <i class="icon-comments icon-2x"></i><big><strong> 0 Comments</strong>
+              <b>Comments: </b><big><strong> 0 </strong>
               <div class="horizontal-line"></div>
-
+              <br>
               <div align="center">
-                              <h3 align="center"><b>Google Map</b></h3>
-                              <div id="map" style='width: 400px; height: 300px' align="center"></div>
-                                <script style="text/javascript">
-                                  handler = Gmaps.build('Google');
-                                  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-                                    markers = handler.addMarkers(<%=raw @hash.to_json %>);
-                                    handler.bounds.extendWith(markers);
-                                    handler.fitMapToBounds();
-                                  });
-                                </script>
-                            </div>
+                <h3 align="center"><b>Google Map</b></h3>
+                <div id="map" style='width: 440px; height: 300px' align="center"></div>
+                  <script style="text/javascript">
+                    handler = Gmaps.build('Google');
+                    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+                    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+                    handler.bounds.extendWith(markers);
+                    handler.fitMapToBounds();
+                        });
+                  </script>
+                </div>
             </div>
           </div>
 
