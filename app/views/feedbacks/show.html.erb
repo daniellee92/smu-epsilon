@@ -74,6 +74,8 @@
               </div>
             </div>
             <div class="column col-md-5" id="main">
+              <%=link_to "Go back to Display All Feedbacks", feedbacks_path %>
+              <div class="horizontal-line"></div>
               <strong>Nickname: </strong> <b style="color: red;"><%= @nickname %></b>
               <div class="horizontal-line"></div>
               <strong>Status: </strong><b style="color: red;"><%= @feedback.status %></b>
