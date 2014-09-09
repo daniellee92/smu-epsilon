@@ -31,21 +31,21 @@
                         <% end %>
                       </ol>
                       <!-- Carousel items -->
-                    <div class="carousel-inner">
+                    <div class="carousel-inner" align="center">
                                           <% if @feedback.image1 != nil %>
-                                            <div class="active item"><img src= <%= "data:image/jpeg;base64," + @feedback.image1 %> style="width: 600px; height: 310px;"/></div>
+                                            <div class="active item"><img src= <%= "data:image/jpeg;base64," + @feedback.image1 %> style="width: 800px; height: 310px;"/></div>
                                           <% end %>
                                           <% if @feedback.image2 != nil %>
-                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image2 %> style="width: 600px; height: 310px;"/></div>
+                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image2 %> style="width: 800px; height: 310px;"/></div>
                                           <% end %>
                                           <% if @feedback.image3 != nil %>
-                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image3 %> style="width: 600px; height: 310px;"/></div>
+                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image3 %> style="width: 800px; height: 310px;"/></div>
                                           <% end %>
                                           <% if @feedback.image4 != nil %>
-                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image4 %> style="width: 600px; height: 310px;"/></div>
+                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image4 %> style="width: 800px; height: 310px;"/></div>
                                           <% end %>
                                           <% if @feedback.image5 != nil %>
-                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image5 %> style="width: 600px; height: 310px;"/></div>
+                                            <div class="item"><img src= <%= "data:image/jpeg;base64," + @feedback.image5 %> style="width: 800px; height: 310px;"/></div>
                                           <% end %>
                                         </div>
                                         <!-- Carousel nav -->
@@ -85,7 +85,7 @@
 
               <div align="center">
                               <h3 align="center"><b>Google Map</b></h3>
-                              <div id="map" style='width: 360px; height: 300px' align="center"></div>
+                              <div id="map" style='width: 400px; height: 300px' align="center"></div>
                                 <script style="text/javascript">
                                   handler = Gmaps.build('Google');
                                   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
